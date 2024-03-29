@@ -1,7 +1,6 @@
 import csv
 import os
 import re
-
 from tabulate import tabulate
 
 
