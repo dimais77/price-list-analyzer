@@ -1,5 +1,8 @@
 # Price-list-analyzer
+
 Price list analyzer - project.py
+https://github.com/dimais77/price-list-analyzer/blob/2f03c8ce589029776081665f0ed3dc83a40676a2/project.py
+
 Задача: Написать анализатор прайс-листов.
 
 Описание и требования:
