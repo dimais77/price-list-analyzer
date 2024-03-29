@@ -72,4 +72,5 @@ class PriceMachine:
 
 if __name__ == "__main__":
     pm = PriceMachine()
-    pm.main('/Users/dmitriiisaev/Documents/GitHub/Price-list-analyzer')
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    pm.main(current_directory)
