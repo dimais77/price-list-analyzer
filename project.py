@@ -1,10 +1,24 @@
+"""
+Модуль для обработки ценовых данных из CSV файлов.
+"""
+
 import csv
 import os
 import re
+
 from tabulate import tabulate
 
 
 def display_results(results):
+    """
+    Отображает результаты поиска в удобном формате.
+
+    Параметры:
+    results (list): Список результатов поиска.
+
+    Возвращает:
+    None
+    """
     headers = ['№', 'Наименование', 'цена', 'вес', 'цена за кг.', 'файл']
     numbered_results = [[i + 1] + result[1:] + [result[0]] for i, result in enumerate(results)]
     print(tabulate(numbered_results, headers=headers, tablefmt='grid'))
@@ -19,11 +33,23 @@ def export_to_html(results, filename):
 
 
 class PriceMachine:
+    """
+    Класс для загрузки, поиска и отображения ценовых данных.
+    """
     def __init__(self):
+        """
+        Инициализация объекта PriceMachine.
+        """
         self.data = []
         self.name_length = 0
 
     def load_prices(self, directory):
+        """
+        Загружает ценовые данные из указанной директории.
+
+        Параметры:
+        directory (str): Путь к директории с файлами ценовых данных.
+        """
         self.data = []
         for filename in os.listdir(directory):
             if filename.endswith('.csv') and 'price' in filename.lower():
